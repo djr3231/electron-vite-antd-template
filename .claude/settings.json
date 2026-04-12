@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && git add -A && (git diff --cached --quiet || git commit -m \"claude: checkpoint $(date +%Y-%m-%d_%H:%M)\" --no-verify)"
+          }
+        ]
+      }
+    ]
+  }
+}
