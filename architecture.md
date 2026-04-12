@@ -82,7 +82,8 @@ files **we add** on top of it.
 > `index.html`). All renderer application code lives inside
 > `src/renderer/src/`. Every renderer addition below is relative to
 > `src/renderer/src/`, NOT `src/renderer/`.
-> ```
+
+```
 src/
 ├── main/
 │   ├── ipc/
