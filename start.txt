@@ -27,3 +27,25 @@ Your first task is to understand what we're starting from. Do this:
 
 5. STOP after presenting the gap analysis and plan. Do not make any 
    changes yet. Wait for my approval.
+
+##Research task — do not make any code changes yet, just report findings:
+
+1. Verify that Electron 39 supports `utilityProcess` (it should, this 
+   API exists since Electron 22). Confirm with current docs.
+
+2. Check whether Comlink works with Electron's `utilityProcess` via 
+   `MessageChannelMain`. Look for:
+   - Recent examples or tutorials combining the two
+   - Comlink's MessagePort adapter status
+   - Any GitHub issues or discussions about this combination
+   
+3. Check whether electron-vite (the version in this scaffold) supports 
+   bundling utility process workers. Look for documented patterns or 
+   config options. The worker file needs to be a separate entry point.
+
+4. Report:
+   - YES/NO/PARTIAL for each of the three checks
+   - Links to authoritative sources
+   - Any caveats or known issues
+   - Alternative if any check is NO (e.g. raw MessageChannelMain instead 
+     of Comlink)
