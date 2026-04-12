@@ -59,3 +59,39 @@ See ARCHITECTURE.md "Out of Scope" section for full rationale.
 ## Language
 Respond to me in Hebrew when I write in Hebrew, English when I write in English.
 Code, comments, commit messages, and file contents: English only.
+
+## Component Design and Styling
+
+### Use Ant Design Components, Not Custom Replacements
+- Before creating any custom component, search the AntD docs for an 
+  existing component or composition that solves the problem.
+- Examples of patterns that have a built-in AntD solution and must NOT 
+  be hand-built:
+  - Layout structure → use Layout, Layout.Header, Layout.Sider, Layout.Content
+  - Grids and columns → use Row + Col with the 24-column system
+  - Forms → use Form, Form.Item, Form.List
+  - Tables → use Table with built-in features (sorting, filtering, pagination)
+  - Modals, Drawers, Popovers, Tooltips → use AntD components, never build from div
+  - Spacing between elements → use Space and Space.Compact, not custom margins
+  - Typography → use Typography.Title, Typography.Text, Typography.Paragraph
+  - Loading states → use Spin and Skeleton
+  - Empty states → use Empty
+  - Notifications → use message and notification APIs
+- Use AntD's built-in props (size, type, variant, status) before reaching 
+  for custom CSS.
+- If a custom component is genuinely needed, justify why no AntD 
+  composition works before writing it.
+
+### Layout Must Be Responsive and Flow-Based
+- Always use flexbox (display: flex) or AntD's Layout/Row/Col for arrangement.
+- Components must size relative to their parent, not absolute pixels:
+  - Use percentages, fr units, flex-grow/flex-shrink/flex-basis
+  - Use AntD's responsive Col props (xs, sm, md, lg, xl)
+  - Avoid fixed widths and heights unless the design explicitly requires them
+- Never position elements with absolute pixel coordinates (top, left in px)
+  unless absolutely necessary (e.g., positioned overlays).
+- Avoid hardcoded magic numbers for spacing — use the theme tokens 
+  (token.padding, token.margin, token.borderRadius) or AntD's Space component.
+- Components should adapt to container width changes without breaking.
+- Test mental model: if the parent shrinks by 30%, does the layout 
+  reflow gracefully or break? It must
