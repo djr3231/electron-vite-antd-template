@@ -1,0 +1,29 @@
+I scaffolded this project with `npm create @quick-start/electron@latest` 
+using the react-ts template. I have NOT modified anything yet beyond 
+adding ARCHITECTURE.md, CLAUDE.md, and .claude/settings.json.
+
+Your first task is to understand what we're starting from. Do this:
+
+1. Read CLAUDE.md and ARCHITECTURE.md in full.
+
+2. Explore the scaffolded project:
+   - Run `ls -la` and `tree -L 3 -I node_modules` (or find equivalent)
+   - Read package.json, electron.vite.config.ts, all tsconfig files
+   - Read electron-builder.yml (or .json/.js variant if different)
+   - List contents of src/main, src/preload, src/renderer
+   - Read the entry files in each process
+
+3. Produce a written GAP ANALYSIS comparing what exists to what 
+   ARCHITECTURE.md requires. Structure it as:
+   
+   ## Already Present (keep as-is)
+   ## Already Present (needs modification)  
+   ## Missing (needs to be added)
+   ## Present but Not in ARCHITECTURE.md (decide: keep or remove)
+
+4. Based on the gap analysis, propose an ordered plan of changes.
+   Group related changes into steps. Each step should be a reviewable 
+   unit (~5-10 file changes max).
+
+5. STOP after presenting the gap analysis and plan. Do not make any 
+   changes yet. Wait for my approval.
