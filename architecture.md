@@ -82,6 +82,7 @@ files **we add** on top of it.
 > `index.html`). All renderer application code lives inside
 > `src/renderer/src/`. Every renderer addition below is relative to
 > `src/renderer/src/`, NOT `src/renderer/`.
+> ```
 src/
 ├── main/
 │   ├── ipc/
@@ -123,6 +124,7 @@ Additional root-level files we add:
 TEMPLATE_SETUP.md                 # Per-project checklist
 .github/workflows/build-and-publish.yml
 ## Additions: electron-builder.yml
+```
 
 The scaffold provides a base `electron-builder.yml`. We modify/add only
 these fields (do not duplicate the rest):
