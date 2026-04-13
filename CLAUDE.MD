@@ -95,3 +95,11 @@ Code, comments, commit messages, and file contents: English only.
 - Components should adapt to container width changes without breaking.
 - Test mental model: if the parent shrinks by 30%, does the layout 
   reflow gracefully or break? It must
+
+## electron-vite Specifics
+- In main/preload: prefer `import.meta.env` over `process.env` for 
+  environment detection (DEV, PROD, MODE) and for variables with 
+  MAIN_VITE_* / PRELOAD_VITE_* prefix. These are idiomatic to 
+  electron-vite and get replaced at build time.
+- Centralize env access in src/main/config/env.ts. Other files should 
+  import from there, not read env variables directly.
